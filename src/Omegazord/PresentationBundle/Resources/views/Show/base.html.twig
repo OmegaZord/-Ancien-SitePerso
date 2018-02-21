@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Test{% endblock %}</title>
+
+        {% stylesheets
+  			'libraries/bootstrap/css/bootstrap.css'
+		    'libraries/font-awesome/css/font-awesome.css'
+		    'libraries/animate.css'
+		    'libraries/Hover/css/hover.css'
+		    'sass/output.css' 
+            %}
+		    <link rel="stylesheet" href="{{ asset_url }}" />
+	    {% endstylesheets %}
+
+		{% javascripts
+			'libraries/tether/src/js/utils.js'
+    		'libraries/tether/src/js/tether.js'
+            'libraries/jQuery/jquery-3.2.1.js'
+            'libraries/bootstrap/js/bootstrap.js'
+            'libraries/typed.js-master/lib/typed.js'
+        	'js/main.js'
+             %}
+        	<script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+
+  </head>
+  <body>
+  	<div class="container-fluid">
+    	<div id="topNom" class="col-12">
+			<h1 class="bgBleuMoyen"> Alexis CHARLES</h1>
+			<div id="typed-strings">
+    			<span>Développeur Informatique - </span>
+			</div>
+			<div id="typed-strings2">
+    			<span>Passioné de jeux vidéos</span>
+    			<span>Utilisateur de Reddit</span>
+    			<span>Amateur de cinéma</span>
+    			<span>Joueur de League of Legends</span>
+    			<span>Fervant défenseur du mot Chocolatine</span>
+    			<span>Grand amateur de vidéos de vulgarisations sur Youtube</span>
+    			<span>Amateur de stream Twitch</span>
+			</div>
+			<h2 class="bgBlancCasse"><span id="typed"></span> <span id="typed2"></span></h2>
+		</div>
+		<div class="row">
+		<div id="menuLeft" class="col-0 col-md-2">
+		    <div class="newMenuLeft row">
+                {% block menuDesktop %}{% endblock %}
+			</div>
+			<hr/>
+            <div id="reseauxSociauxDesktop" class="row">
+                <a class="fa-2x twitter hvr-icon-pulse-grow" href="https://www.twitter.com"></a>
+                <a class="fa-2x linkedin hvr-icon-pulse" href="https://www.linkedin.com"></a>
+                <a class="fa-2x github hvr-icon-spin" href="https://www.github.com"></a>
+            </div>
+			<hr/>
+        	<div>
+            	<div class="col-12 margeBas padleft0">
+                	<span class="cl-1 hvr-icon-wobble-vertical"></span>
+                	<span class="col-11 pad0 texteCentrer">Téléphone:</span>
+                	<span class="col-12 texteCentrer">06&nbsp;25&nbsp;78&nbsp;90&nbsp;78</span>
+                </div>
+                <div class="col-12 margeBas padleft0">
+                	<span class="cl-1 hvr-icon-wobble-horizontal"></span>
+                	<span class="col-11 texteCentrer">Mail:</span>
+                	<a href="mailto:acharles0111@gmail.com" class="col-12 padleft5">acharles0111@gmail.com</a>
+                </div>
+                <div class="col-12 padleft0">
+                	<span class="cl-1 hvr-icon-drop"></span>
+                	<span class="col-11 texteCentrer">Adresse:</span>
+                	<span class="col-12">Brive-La-Gaillarde</span>
+                	<span class="col-12">(19100)</span>
+                </div>
+            </div>
+		</div>
+                
+    	<div id="menuTop" class="col-12">
+        	<nav id="navbarTop" class="navbar navbar-inverse">
+            	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+                	<span class="navbar-toggler-icon"></span>
+                </button>
+    
+                 <div id="navbarCollapse" class="navbar-collapse collapse" aria-expanded="false">
+                    <ul class="nav navbar-nav texteCentrer">
+                   	{% block menuMobile %}{% endblock %}
+                  				<!-- <li class="nav-item"><a class="nav-link" href="#competences">Compétences</a></li>
+                  				<li class="nav-item"><a class="nav-link" href="#experience">Expériences</a></li>
+                  				<li class="nav-item"><a class="nav-link" href="#personnel">Personnel</a></li> -->
+                	</ul>
+                	<hr class="borderWhite"/>
+                 	<div id="reseauxMobile" class="row">
+    					<!-- <a id="facebook" class="col-1 fa-2x hvr-icon-bounce"></a> -->
+    				    <a class="col-4 fa-2x twitter hvr-icon-pulse-grow"></a>
+    				    <a class="col-4 fa-2x linkedin hvr-icon-pulse"></a>
+    				    <a class="col-4 fa-2x github hvr-icon-spin"></a>
+    				</div>
+    				<hr class="borderWhite"/>
+		            <div class="row">
+			            	<div class="col-12 margeBas">
+			                	<span class="hvr-icon-wobble-vertical"></span><span class="txtWhite">Téléphone: 06 25 78 90 78</span>
+			                </div>
+			                <div class="col-12 margeBas">
+			                	<span class="hvr-icon-wobble-horizontal"></span><a class="txtWhite" href="mailto:acharles0111@gmail.com">Mail: acharles0111@gmail.com</a>
+			                </div>
+			                <div class="col-12">
+			                	<span class="hvr-icon-drop"></span><span class="txtWhite">Adresse: Brive-La-Gaillarde (19100)</span>
+			                </div>
+		           </div>
+                </div>
+			</nav>
+		</div>    
+			    
+			<div id="content" class="col-12 col-md-10">
+			    {% block body %}{% endblock %}
+			</div>   
+		</div>
+	</div>
+  </body>
+</html>

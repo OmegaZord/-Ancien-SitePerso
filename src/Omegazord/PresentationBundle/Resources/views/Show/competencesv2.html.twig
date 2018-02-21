@@ -1,0 +1,48 @@
+{% extends 'OmegazordPresentationBundle:Show:base.html.twig' %}
+
+{% block title %}Alexis CHARLES{% endblock %}
+
+{% block menuDesktop %}
+	<a class="col-12 newBtnMenu newBtnMenuTop" href="{{ path('cv') }}">Mon CV<span class="fa fa-arrow-right menuArrow"></span></a>
+	<a class="col-12 newBtnMenu newBtnMenuMiddle" href="{{ path('creations') }}">Mes créations<span class="fa fa-arrow-right menuArrow"></span></a>
+	<a class="col-12 newBtnMenu newBtnMenuBottom" href="#">Télécharger mon CV<img class="menuArrow" src="{{ asset('images/pdf-icon.png') }}"/></a>
+{% endblock %}
+
+{% block menuMobile %}
+	<li class="nav-item"><a class="nav-link txtWhite" href="{{ path('cv') }}">Mon CV</a></li>
+    <li class="nav-item"><a class="nav-link txtWhite" href="{{ path('creations') }}">Mes créations</a></li>
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div>
+				<p>HTML</p>
+				<p>Détails HTML</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-8">
+				<p class="competences2">Bootstrap</p>
+				<p class="tooltipCompetence">Détails Bootstrap</p>
+			</div>
+			<div class="4">
+				<p class="competences2">SASS</p>
+				<p class="tooltipCompetence">Détails SASS</p>
+			</div>
+			<div class="12">
+				<p class="competences2">CSS</p>
+				<p class="tooltipCompetence">Détails CSS</p>
+			</div>
+			<div class="8">
+				<p class="competences2">Hover.css</p>
+				<p class="tooltipCompetence">Détails Hover.css</p>
+			</div>
+			<div class="4">
+				<p class="competences2">Animate.css</p>
+				<p class="tooltipCompetence">Détails Animate.css</p>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,280 @@
+{% extends 'OmegazordPresentationBundle:Show:base.html.twig' %}
+
+{% block title %}
+CV Alexis CHARLES
+{% endblock %}
+
+{% block menuDesktop %}
+<a class="col-12 newBtnMenu newBtnMenuTop" href="{{ path('accueil') }}">Accueil<span class="fa fa-arrow-right menuArrow"></span></a>
+<a class="col-12 newBtnMenu newBtnMenuMiddle" href="{{ path('creations') }}">Mes créations<span class="fa fa-arrow-right menuArrow"></span></a>
+<a class="col-12 newBtnMenu newBtnMenuBottom wordwrapbreakword" href="/downloads/CVAlexisCHARLES.pdf" download>Télécharger mon CV<img class="menuArrow" src="{{ asset('images/pdf-icon.png') }}" /></a>
+{% endblock %}
+
+{% block menuMobile %}
+<li class="nav-item"><a class="nav-link txtWhite"
+	href="{{ path('accueil') }}">Accueil</a></li>
+<li class="nav-item"><a class="nav-link txtWhite"
+	href="{{ path('creations') }}">Mes créations</a></li>
+{% endblock %}
+
+{% block body %}
+<!-- Compétences -->
+<section id="competences">
+	<div>
+		<h3 class="hvr-underline-from-left">Compétences</h3>
+	</div>
+	<div class="container width100">
+		<div class="row">
+			<div id="comp1"
+				class="col-12 col-sm-4 bgcomp1">
+				<p id="titreComp1" class="titreComp hvr-underline-from-left">Langages</p>
+				<div class="row padleft10 categorieComp">
+					{% for comp in competencesLangage %}
+					<p class="tagCompetences hvr-radial-out hvr-pulse-shrink">
+						{{ comp.nom }}
+					</p>
+					{% endfor %}
+				</div>
+			</div>
+
+			<div id="comp2" class="col-12 col-sm-4 bgcomp2">
+				<p id="titreComp2" class="titreComp hvr-underline-from-left">Framework</p>
+				<div class="row padleft10 categorieComp">
+					{% for comp in competencesFramework %}
+					<p class="tagCompetences hvr-radial-out hvr-pulse-shrink">
+						{{ comp.nom }}
+					</p>
+					{% endfor %}
+				</div>
+			</div>
+
+			<div id="comp3"
+				class="col-12 col-sm-4 bgcomp3">
+				<p id="titreComp3" class="titreComp hvr-underline-from-left">Logiciels</p>
+				<div class="row padleft10 categorieComp">
+					{% for comp in competencesLogiciel %}
+					<p class="tagCompetences hvr-radial-out hvr-pulse-shrink">
+						{{ comp.nom }}
+					</p>
+					{% endfor %}
+				</div>
+			</div>
+
+			<div id="comp4"
+				class="col-12 col-sm-4 bgcomp4">
+				<p id="titreComp4" class="titreComp hvr-underline-from-left">Bibliothèques</p>
+				<div class="row padleft10 categorieComp">
+					{% for comp in competencesBibliotheque %}
+					<p class="tagCompetences hvr-radial-out hvr-pulse-shrink">
+						{{ comp.nom }}
+					</p>
+					{% endfor %}
+				</div>
+			</div>
+
+			<div id="comp5"
+				class="col-12 col-sm-8 bgcomp5">
+				<p id="titreComp5" class="titreComp hvr-underline-from-left">Autres
+					compétences</p>
+				<div class="row padleft5 categorieComp">
+					{% for comp in competencesAutre %}
+					<p class="tagCompetences hvr-radial-out hvr-pulse-shrink">
+						{{ comp.nom }}
+					</p>
+					{% endfor %}
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<!-- Expériences via bdd -->
+<section id="experience">
+	<div class="col-12">
+		<h3 class="hvr-underline-from-left">Expériences</h3>
+	</div>
+	<div class="container width100">
+		<div class="row">
+			<div class="col-12 col-sm-12 col-md-12 col-lg-12 width100">
+				{% for experience in experiences %}
+
+				{% if experience.id <= 5 %}
+
+				<div class="blocExp hvr-curl-top-left hvr-shadow-radial hvr-forward">
+					<div class="row margeGauche1">
+						<div class="col-2 col-md-0 hiddenContentDesktopl"></div>
+						<img class="col-8 col-md-2 imageSize"
+							src="{{ asset('images/' ~ experience.image) }}"></img>
+						<div class="col-2 col-md-0 hiddenContentDesktopl"></div>
+						<div class="col-12 col-md-10">
+							<h4>
+								{{ experience.nom }}
+							</h4>
+							<em>{{ experience.dateDebut|date("d/m/Y") }} - {{ experience.dateFin|date("d/m/Y") }}</em>
+						</div>
+
+						<div class="blocResume col-12">
+							<p>
+								{{ experience.resume }}
+							</p>
+						</div>
+						<div class="blocPresentation col-12">
+							{% if experience.id == 1 %}
+							<div id="btnContenuFormationAformac" class="btnDetails col-3">
+								<a>Contenu de la formation: </a> <i
+									class="fa fa-2x fa-arrow-circle-o-down" aria-hidden="true"></i>
+							</div>
+							<div id="contenuFormationAformac" class="hiddenContent">
+								<p>
+									{{ experience.description }}
+								</p>
+							</div>
+							{% endif %}
+							{% if experience.id == 2 %}
+							<div id="btnContenuProjetsPerso" class="btnDetails col-3">
+								<a>Projets: </a> <i class="fa fa-2x fa-arrow-circle-o-down"
+									aria-hidden="true"></i>
+							</div>
+							<div id="contenuProjetsPerso" class="hiddenContent">
+								<p>
+									{{ experience.description }}
+								</p>
+							</div>
+							{% endif %}
+							{% if experience.id == 3 %}
+							<div id="btnContenuDevCAI" class="btnDetails col-3">
+								<a>Mission: </a> <i class="fa fa-2x fa-arrow-circle-o-down"
+									aria-hidden="true"></i>
+							</div>
+							<div id="contenuDevCAI" class="hiddenContent">
+								<p>
+									{{ experience.description }}
+								</p>
+							</div>
+							{% endif %}
+							{% if experience.id == 4 %}
+							<div id="btnContenuStageCAI" class="btnDetails col-3">
+								<a>Mission: </a> <i class="fa fa-2x fa-arrow-circle-o-down"
+									aria-hidden="true"></i>
+							</div>
+							<div id="contenuStageCAI" class="hiddenContent">
+								<p>
+									{{ experience.description }}
+								</p>
+							</div>
+							{% endif %}
+							{% if experience.id == 5 %}
+							<div id="btnContenuFormationAFPA" class="btnDetails col-3">
+								<a>Mission: </a> <i class="fa fa-2x fa-arrow-circle-o-down"
+									aria-hidden="true"></i>
+							</div>
+							<div id="contenuFormationAFPA" class="hiddenContent">
+								<p>
+									{{ experience.description }}
+								</p>
+							</div>
+							{% endif %}
+							<p class="ville">
+								{{ experience.lieu }}
+							</p>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+
+				{% endfor %}
+
+				<div id="btnDisplayCV" class="margeBas">
+					<a class="btn btn-primary troisPointsDown" onclick="displayCV()"
+						title="Voir plus">...</a>
+				</div>
+
+				{% for experience in experiences %}
+
+				{% if experience.id >= 6 %}
+
+				{% if experience.id == 6 %}
+
+				<div id="blocCVPDM"
+					class="blocExp hiddenContent hvr-curl-top-left hvr-box-shadow-outset hvr-forward">
+					<div class="row margeGauche1">
+						<div class="col-2 col-md-0 hiddenContentDesktopl"></div>
+						<img class="col-8 col-md-2 imageSize" src="{{ asset('images/' ~ experience.image) }}"></img>
+						<div class="col-2 col-md-0 hiddenContentDesktopl"></div>
+						<div class="col-12 col-md-10">
+							<h4>{{ experience.nom }}</h4>
+							<em>{{ experience.dateDebut|date("d/m/Y") }} - {{ experience.dateFin|date("d/m/Y") }}</em>
+						</div>
+						<div class="blocResume col-12">
+							<p>{{ experience.resume }}</p>
+						</div>
+						<div class="blocPresentation col-12">
+							<div id="btnContenuPDM" class="btnDetails col-3">
+								<a>Détails des projets: </a> <i
+									class="fa fa-2x fa-arrow-circle-o-down" aria-hidden="true"></i>
+							</div>
+							<div id="contenuPDM" class="hiddenContent">
+								<p>{{ experience.description }}</p>
+							</div>
+							<p class="ville">{{ experience.lieu }}</p>
+						</div>
+					</div>
+				</div>
+
+				{% endif %}
+
+				{% if experience.id == 7 %}
+
+				<div id="blocCVU"
+					class="blocExp width100 hiddenContent hvr-curl-top-left hvr-box-shadow-outset hvr-forward">
+					<div class="row margeGauche1">
+						<div class="col-2 col-md-0 hiddenContentDesktopl"></div>
+						<img class="col-8 col-md-2 imageSize" src="{{ asset('images/' ~ experience.image) }}"></img>
+						<div class="col-2 col-md-0 hiddenContentDesktopl"></div>
+						<div class="col-12 col-md-10">
+							<h4>{{ experience.nom }}</h4>
+							<em>{{ experience.dateDebut|date("d/m/Y") }} - {{ experience.dateFin|date("d/m/Y") }}</em>
+						</div>
+						<div class="blocResume col-12">
+							<p>{{ experience.resume }}</p>
+						</div>
+						<div class="col-12">
+							<p class="ville">{{ experience.lieu }}</p>
+						</div>
+					</div>
+				</div>
+
+				{% endif %}
+
+				{% if experience.id == 8 %}
+
+				<div id="blocCVBAC"
+					class="blocExp width100 hiddenContent hvr-curl-top-left hvr-box-shadow-outset hvr-forward">
+					<div class="row margeGauche1">
+						<div class="col-2 col-md-0 hiddenContentDesktopl"></div>
+						<img class="col-8 col-md-2 imageSize" src="{{ asset('images/' ~ experience.image) }}"></img>
+						<div class="col-2 col-md-0 hiddenContentDesktopl"></div>
+						<div class="col-12 col-md-10">
+							<h4>{{ experience.nom }}</h4>
+							<em>{{ experience.dateDebut|date("d/m/Y") }} - {{ experience.dateFin|date("d/m/Y") }}</em>
+						</div>
+						<div class="blocResume col-12">
+							<p>{{ experience.resume }}</p>
+						</div>
+						<div class="col-12">
+							<p class="ville">{{ experience.lieu }}</p>
+						</div>
+					</div>
+				</div>
+
+				{% endif %}
+
+				{% endif %}
+
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

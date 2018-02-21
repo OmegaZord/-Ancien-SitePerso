@@ -1,0 +1,319 @@
+#topNom
+{
+	position: fixed;
+    	top: 0;
+    	left: 0;
+    	z-index: 999;
+}
+
+#photo
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 125%;
+	display: none;
+}
+
+#reseauxMobile
+{
+	min-height: 50px;
+	margin-right: 0px;
+}
+
+.facebook
+{
+	color: $couleur_facebook;
+}
+
+.twitter
+{
+	color: $couleur_twitter;
+}
+
+.linkedin
+{
+	color: $couleur_linkedin;
+}
+
+.github
+{
+	color: $couleur_github;
+}
+
+#menuTop
+{
+    	min-height: 60px;
+    	position: fixed;
+    	top: 8%;
+    	left: 0;
+    	z-index: 9999;
+
+	.navbar-toggler
+	{
+		background-color: $couleur_bleu_gris_fonce;
+	}
+
+	#navbarCollapse
+	{
+		background-color: $couleur_bleu_gris_fonce;
+	}
+}
+
+#menuLeft
+{
+	display: none;
+
+	.newBtnMenu
+	{
+	   	display: inline-block;
+	   	background-color: $couleur_facebook;
+	   	color: $couleur_gris_blanc;
+	   	word-break: break-all;
+	   	min-height: 50px;
+	   	padding-top: 10px;
+
+		.menuArrow
+		{
+		   	float: right;
+			opacity: 0.9;
+		}
+	}
+
+	.newBtnMenu:hover
+	{
+	   	color: $couleur_blanc;
+	   	text-decoration: none;
+	   	box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;
+	}
+
+	.newBtnMenu:hover > .menuArrow
+	{
+		opacity: 1;
+	}
+
+	.newBtnMenu:visited {
+	    	color: $couleur_blanc;
+	    	text-decoration: none;
+	}
+
+	.newBtnMenuTop
+	{
+	   	border-top-right-radius: 10px;
+	}
+
+	.newBtnMenuMiddle
+	{
+	   	border-top: 2px $couleur_bleu_pastel solid;
+	   	border-bottom: 2px $couleur_bleu_pastel solid;
+	}
+
+	.newBtnMenuBottom
+	{
+	   	border-bottom-right-radius: 10px;
+	   	line-height: 200%;
+	}
+
+	#reseauxSociauxDesktop
+	{
+		min-height: 40px;
+	}
+}
+
+#content
+{
+	position: absolute;
+    	top: 165px;
+
+	#competences
+	{
+		margin-bottom: 2%;
+
+		.categorieComp
+		{
+			text-align: center;
+		}
+
+		.tagCompetences
+		{
+		    	background-color: white;
+		    	padding: 5px;
+		    	border-radius: 10px;
+		    	cursor: default;
+		    	margin-right: 2%;
+		}
+
+		.bgcomp1
+		{
+			background-color: $couleur_violet_pastel;
+		}
+
+		.bgcomp2
+		{
+			background-color: $couleur_vert_pastel;
+		}
+
+		.bgcomp3
+		{
+			background-color: $couleur_rose_pastel;
+		}
+
+		.bgcomp4
+		{
+			background-color: $couleur_rose_pastel_fonce;
+		}
+
+		.bgcomp5
+		{
+			background-color: $couleur_vert_pale_clair;
+		}
+	
+		#comp1
+		{
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+		}
+	
+		#comp5
+		{
+			border-bottom-left-radius: 10px;
+			border-bottom-right-radius: 10px;
+		}
+	}
+
+	.competences2
+	{
+		background-color: $couleur_rose;
+	}
+
+
+
+	#experience
+	{
+		.blocExp
+		{
+			background-color: $couleur_bleu_electrique;
+			border-radius: 5px;
+			margin-bottom: 2%;
+			padding: 12px;
+			width:100%;
+		}
+
+		.blocExp:hover
+		{
+			background-color: $couleur_bleu_gris_clair;
+		}
+
+		.ville
+		{
+			text-align: right;
+		}
+
+		.btnDetails
+		{
+			color: $couleur_gris-bleu-fonce;
+			background-color: $couleur_gris_blanc;
+			border: 2px solid $couleur_gris-bleu-fonce;
+			border-radius: 30px;
+			text-align: center;
+			cursor: pointer;
+			padding: 2px;
+		}
+
+		.blocExp:hover .btnDetails
+		{
+			color: black;
+			background-color: $couleur_bleu_electrique;
+			border: 2px solid black;
+			border-radius: 30px;
+			text-align: center;
+			cursor: pointer;
+			padding: 2px;
+		}
+
+		/* Bouton Details */
+
+		.btnDetailsClique
+		{
+			color: white;
+			background-color: black;
+			border: 2px solid $couleur_bleu_electrique;
+			box-shadow: inset 0 0 0 2px $couleur_gris_blanc;
+			border-radius: 30px;
+			text-align: center;
+			cursor: pointer;
+			padding: 2px;
+		}
+
+		.btnDetails a
+		{
+			vertical-align: super;
+		}
+
+		.btnDetailsClique a
+		{
+			vertical-align: super;
+		}
+
+		.btnDetails:hover
+		{
+			color: white;
+			background-color: black;
+			border: 2px solid black;
+			box-shadow: inset 0 0 0 2px white;
+		}
+
+		/* Bouton afficher CV+ */
+
+		#btnDisplayCV
+		{
+			text-align: center;
+			cursor: pointer;
+		}
+
+		#btnDisplayCV .btnDisplayCVUp
+		{
+			padding-top: 1px;
+			padding-bottom: 1px;
+			color: white;
+		}
+	}
+
+	.imageGitHub:hover
+	{
+		box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3) inset;
+	}
+
+	.btnApiGithub
+	{
+		display: inline-block;
+		background-color: $couleur_facebook;
+		color: $couleur_gris_blanc;
+		word-break: break-all;
+		min-height: 50px;
+		padding: 15px;
+		border-top-right-radius: 50px;
+		border-bottom-right-radius: 50px;
+		margin-top: 2%;
+		margin-bottom: 2%;
+	}
+
+	.btnApiGithub:hover
+	{
+		box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;
+	}
+
+	.imageGitHub:hover + .btnApiGithub
+	{
+		box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;
+	}
+
+	.imageGitHub:hover
+	{
+		box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3) inset;
+		border: 4px solid $couleur_bleu_fonce;
+	}
+}
+
+
+

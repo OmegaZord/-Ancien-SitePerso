@@ -1,0 +1,200 @@
+body
+{
+	.facebook
+	{
+		color: $couleur_bleu_gris_fonce;
+	}
+
+	.twitter
+	{
+		color: $couleur_bleu_gris_fonce;
+	}
+
+	.linkedin
+	{
+		color: $couleur_bleu_gris_fonce;
+	}
+
+	.github
+	{
+		color: $couleur_bleu_gris_fonce;
+	}
+
+	.facebook:hover
+	{
+		color: $couleur_facebook;
+	}
+	
+	.twitter:hover
+	{
+		color: $couleur_twitter;
+	}
+	
+	.linkedin:hover
+	{
+		color: $couleur_linkedin;
+	}
+	
+	.github:hover
+	{
+		color: $couleur_github;
+	}
+
+	#menuTop
+	{
+   		display: none;
+	}
+	
+	#menuLeft
+	{
+		display: block;
+		width: 20%;
+		position: fixed;
+		top:18%;
+		bottom :0%;
+	}
+	
+	#content
+	{
+		position: absolute;
+        	top: 120px;
+        	right: 2.5%;
+        	width: 80%;
+
+		.hiddenContentDesktopl
+		{
+			display: none;
+		}
+		
+		#competences
+		{
+			.categorieComp
+			{
+				text-align: left;
+			}
+	
+			.titreComp
+			{
+				text-decoration: underline;
+				text-decoration-color: $couleur_bleu_pastel;
+			}
+	
+			#comp1:hover > #titreComp1
+			{
+				text-decoration: underline;
+				text-decoration-color: $couleur_bleu_electrique;
+				/*text-decoration-skip: objects spaces; ne marche pas...
+				text-decoration-style: solid;*/
+			}
+	
+			#comp2:hover > #titreComp2
+			{
+				text-decoration: underline;
+				text-decoration-color: $couleur_bleu_electrique;
+			}
+	
+			#comp3:hover > #titreComp3
+			{
+				text-decoration: underline;
+				text-decoration-color: $couleur_bleu_electrique;
+			}
+	
+			#comp4:hover > #titreComp4
+			{
+				text-decoration: underline;
+				text-decoration-color: $couleur_bleu_electrique;
+			}
+	
+			#comp5:hover > #titreComp5
+			{
+				text-decoration: underline;
+				text-decoration-color: $couleur_bleu_electrique;
+			}
+	
+
+			.bgcomp1
+			{
+				background-color: $couleur_bleu_clair_2;
+			}
+	
+			.bgcomp1:hover
+			{
+				background-color: $couleur_bleu_gris_clair_2;
+			}
+	
+			.bgcomp2
+			{
+				background-color: $couleur_bleu_clair_2;
+			}
+	
+			.bgcomp2:hover
+			{
+				background-color: $couleur_bleu_gris_clair_2;
+			}
+	
+			.bgcomp3
+			{
+				background-color: $couleur_bleu_clair_2;
+			}
+	
+			.bgcomp3:hover
+			{
+				background-color: $couleur_bleu_gris_clair_2;
+			}
+	
+			.bgcomp4
+			{
+				background-color: $couleur_bleu_clair_2;
+			}
+	
+			.bgcomp4:hover
+			{
+				background-color: $couleur_bleu_gris_clair_2;
+			}
+	
+			.bgcomp5
+			{
+				background-color: $couleur_bleu_clair_2;
+			}
+	
+			.bgcomp5:hover
+			{
+				background-color: $couleur_bleu_gris_clair_2;
+			}
+		
+			#comp1
+			{
+				border-top-left-radius: 10px;
+				border-top-right-radius: 0px;
+			}
+		
+			#comp3
+			{
+				border-top-right-radius: 10px;
+			}
+		
+			#comp4
+			{
+				border-bottom-left-radius: 10px;
+			}
+	
+			#comp5
+			{
+				border-bottom-left-radius: 0px;
+				border-bottom-right-radius: 10px;
+			}
+	
+
+	
+			/*BlocExp curl top*/
+			.hvr-curl-top-left:before
+			{
+				//background: linear-gradient(135deg,#d5edf8 45%,#aaa 50%,#ccc 56%,#fff 80%);
+				background: linear-gradient(135deg,#FFFFFF 45%,#aaa 50%,#ccc 56%,#fff 80%);
+			}
+		}
+	}
+}
+	
+
+

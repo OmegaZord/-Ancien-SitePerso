@@ -1,0 +1,29 @@
+// sass --watch input.scss:output.css
+
+/*@import "global.scss";
+@import "couleurs.scss";
+@import "general.scss";
+@import "tabdesk.scss";*/
+
+
+
+@import "couleurs.scss";
+@import "general.scss";
+@import "base.scss";
+
+
+@media screen and (min-width: 576px){
+    @import "petiteTablette/base.scss";
+}
+
+@media screen and (min-width: 768px){
+    @import "tablette/base.scss";
+}
+
+@media screen and (min-width: 992px){
+    @import "bureau/base.scss";
+}
+
+@media screen and (min-width: 1200px){
+    @import "xl/base.scss";
+}

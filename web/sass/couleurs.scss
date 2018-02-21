@@ -1,0 +1,68 @@
+$couleur_bleu_clair: #8ACDED;
+$couleur_bleu_clair_2: #d5edf8;
+$couleur_bleu_fonce: #297994;
+$couleur_bleu_turquoise: #7FE5E5;
+$couleur_bleu_electrique: #2098D1;
+$couleur_bleu_gris_clair: #abbfc8;
+$couleur_bleu_gris_clair_2: #bfd5df;
+$couleur_bleu_gris_fonce: #718693;
+$couleur_bleu_pastel: #A8C2E5;
+
+$couleur_rose: #dca6ae;
+$couleur_rouge: red;
+
+$couleur_facebook: #3b5998;
+$couleur_twitter: #1da1f2;
+$couleur_linkedin: #0084bf;
+$couleur_github: #24292e;
+
+$couleur_violet_pastel: #c4bae7;
+$couleur_vert_pastel: #00aba9;
+$couleur_rose_pastel: #ffcece;
+$couleur_rose_pastel_fonce: #ff8585;
+$couleur_vert_pale_clair: #e2ffc8;
+
+$couleur_gris_blanc: #EDEDED;
+$couleur_gris-bleu-fonce: #263345;
+
+$couleur_blanc: #ffffff;
+
+
+.txtWhite
+{
+	color: $couleur_gris_blanc !important;
+}
+
+.borderWhite
+{
+	border-color: $couleur_gris_blanc;
+}
+
+.fa-exclamation-triangle
+{
+	color: $couleur_rouge;
+}
+
+
+.bgBleuLeger
+{
+	background-color: $couleur_bleu_clair;
+}
+
+.bgBleuMoyen
+{
+	background-color: $couleur_bleu_pastel;
+}
+
+.bgBlancCasse
+{
+	background-color: $couleur_gris_blanc;
+}
+
+.bgRose
+{
+	background-color: $couleur_rose;
+}
+
+
+

@@ -1,0 +1,90 @@
+{% extends 'OmegazordPresentationBundle:Show:base.html.twig' %}
+
+{% block title %}Mes Créations{% endblock %}
+
+{% block menuDesktop %}
+	<a class="col-12 newBtnMenu newBtnMenuTop" href="{{ path('accueil') }}">Accueil<span class="fa fa-arrow-right menuArrow"></span></a>
+	<a class="col-12 newBtnMenu newBtnMenuMiddle" href="{{ path('cv') }}">Mon CV<span class="fa fa-arrow-right menuArrow"></span></a>
+	<a class="col-12 newBtnMenu newBtnMenuBottom wordwrapbreakword" href="/downloads/CVAlexisCHARLES.pdf" download>Télécharger mon CV<img class="menuArrow" src="{{ asset('images/pdf-icon.png') }}"/></a>
+{% endblock %}
+
+{% block menuMobile %}
+	<li class="nav-item"><a class="nav-link txtWhite" href="{{ path('accueil') }}">Accueil</a></li>
+    <li class="nav-item"><a class="nav-link txtWhite" href="{{ path('cv') }}">Mon CV</a></li>
+{% endblock %}
+
+{% block body %}
+ <h1>Mes créations</h1>
+	<div>			
+			<a href="{{ path('apigithub') }}">
+				<span class="btnApiGithub">Exemples d' utilisation de  plusieurs API</span>
+				<img class="imageSize imageGitHub" src="{{ asset('images/GitHub-Mark.png') }}"></img>
+				<img class="imageSize imageGitHub" src="{{ asset('images/logo_api.svg') }}"></img>
+				<img class="imageSize imageGitHub" src="{{ asset('images/reddit.png') }}"></img>
+			</a>
+
+			<hr/>
+		
+			<div class="row bordRond bgBlancCasse">
+				<h3 class="col-12">Créations en PHP</h3>
+				<div class="col-11 offset-1">
+    				{% for projet in projetsPHP %}
+    					<div class="row">
+    						<img class="col-8 col-sm-1 imageSize" src="{{ asset('images/' ~ projet.Image) }}"></img>
+    						<h4 class="offset-1 col-sm-10 souligne">{{ projet.Nom }}</h4>
+    					</div>
+    					<p>Description: {{ projet.Description }}</p>
+    					<p>Lien vers la démonstration: <a class="wordwrapbreak" href="{{ projet.Lien }}">{{ projet.Lien }}</a></p>
+    				{% endfor %}
+				</div>
+			</div>
+			
+			<hr/>
+			
+			<div class="row bordRond bgBlancCasse">
+				<h3 class="col-12">Créations en C#</h3>
+				<div class="col-11 offset-1">
+    				{% for projet in projetsCSharp %}
+    					<div class="row">
+    						<img class="col-1 imageSize" src="{{ asset('images/' ~ projet.Image) }}"></img>
+    						<h4 class="offset-1 col-10 souligne">{{ projet.Nom }}</h4>
+    					</div>
+    					<p>Description: {{ projet.Description }}</p>
+    					<p>Lien vers la démonstration: <a class="wordwrapbreak" href="{{ projet.Lien }}">{{ projet.Lien }}</a></p>
+    				{% endfor %}
+				</div>
+			</div>
+			
+			<hr/>
+			
+			<div class="row bordRond bgBlancCasse">
+				<h3 class="col-12">Créations en Javascript</h3>
+				<div class="col-11 offset-1">
+    				{% for projet in projetsJavascript %}
+    					<div class="row">
+    						<img class="col-1 imageSize" src="{{ asset('images/' ~ projet.Image) }}"></img>
+    						<h4 class="offset-1 col-10 souligne">{{ projet.Nom }}</h4>
+    					</div>
+    					<p>Description: {{ projet.Description }}</p>
+    					<p>Lien vers la démonstration: <a class="wordwrapbreak" href="{{ projet.Lien }}">{{ projet.Lien }}</a></p>
+    				{% endfor %}
+				</div>
+			</div>
+			
+			<hr/>
+			
+			<div class="row bordRond bgBlancCasse">
+				<h3 class="col-12">Créations en HTML/CSS</h3>
+				<div class="col-11 offset-1">
+    				{% for projet in projetsHTMLCSS %}
+    					<div class="row">
+    						<img class="col-1 imageSize" src="{{ asset('images/' ~ projet.Image) }}"></img>
+    						<h4 class="offset-1 col-10 souligne">{{ projet.Nom }}</h4>
+    					</div>
+    					<p>Description: {{ projet.Description }}</p>
+    					<p>Lien vers la démonstration: <a class="wordwrapbreak" href="{{ projet.Lien }}">{{ projet.Lien }}</a></p>
+    				{% endfor %}
+				</div>
+		</div>
+	</div>
+{% endblock %}

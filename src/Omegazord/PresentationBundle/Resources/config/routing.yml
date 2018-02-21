@@ -1,0 +1,26 @@
+omegazord_presentation_homepage:
+    path:     /
+    defaults: 
+       _controller: "FrameworkBundle:Redirect:urlRedirect"
+       path: /accueil
+       permanent: true
+
+accueil:
+    path:     /accueil
+    defaults: { _controller: "OmegazordPresentationBundle:Show:accueil" }
+
+cv:
+    path:     /cv
+    defaults: { _controller: "OmegazordPresentationBundle:Show:cv" }
+
+creations:
+    path:     /creations
+    defaults: { _controller: "OmegazordPresentationBundle:Show:creations" }
+    
+apigithub:
+    path:     /apigithub
+    defaults: { _controller: "OmegazordPresentationBundle:Show:apigithub" }
+    
+competencesv2:
+    path:     /competencesv2
+    defaults: { _controller: "OmegazordPresentationBundle:Show:competencesv2" }

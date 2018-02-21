@@ -1,0 +1,3 @@
+omegazord_presentation:
+    resource: "@OmegazordPresentationBundle/Resources/config/routing.yml"
+    prefix:   /

@@ -1,0 +1,82 @@
+{% extends 'OmegazordPresentationBundle:Show:base.html.twig' %}
+
+{% block title %}Alexis CHARLES{% endblock %}
+
+{% block menuDesktop %}
+	<a class="col-12 newBtnMenu newBtnMenuTop" href="{{ path('cv') }}">Mon CV<span class="fa fa-arrow-right menuArrow"></span></a>
+	<a class="col-12 newBtnMenu newBtnMenuMiddle" href="{{ path('creations') }}">Mes créations<span class="fa fa-arrow-right menuArrow"></span></a>
+	<a class="col-12 newBtnMenu newBtnMenuBottom wordwrapbreakword" href="/downloads/CVAlexisCHARLES.pdf">Télécharger mon CV<img class="menuArrow" src="{{ asset('images/pdf-icon.png') }}"/></a>
+{% endblock %}
+
+{% block menuMobile %}
+	<li class="nav-item"><a class="nav-link  txtWhite" href="{{ path('cv') }}">Mon CV</a></li>
+    <li class="nav-item"><a class="nav-link  txtWhite" href="{{ path('creations') }}">Mes créations</a></li>
+{% endblock %}
+
+{% block body %}
+		<p id="infosApi">
+			<i class="fa fa-arrow-down" aria-hidden="true"></i>
+			Cliquez sur l'un des boutons pour afficher des informations fournies par l'API correspondante
+			<i class="fa fa-arrow-down" aria-hidden="true"></i>
+		</p>
+		
+		<div class="">
+    		<div class="row">
+    			<img id="github" onclick="show_api(this.id)"class="col-4 imageSize imageSizeAPIGithub" src="{{ asset('images/GitHub-Mark.png') }}"></img>
+    			<img id="regions" onclick="show_api(this.id)" class="col-4 imageSize imageSizeAPIGithub" src="{{ asset('images/logo_api.svg') }}"></img>
+    			<img id="reddit" onclick="show_api(this.id)" class="col-4 imageSize imageSizeAPIGithub" src="{{ asset('images/reddit.png') }}"></img>
+    		</div>
+		</div>
+		
+		<div>
+			<h3>
+			    {% if erreur is defined %}
+			        {{ erreur }}
+			    {% endif %}
+			</h3>
+		</div>
+		
+		<div id="blocGithub" class="hiddenContent">
+			{% if gitHubUser is defined %}
+    			<h2>Données récupérées via l'API de GitHub</h2>
+    			<h3>{{ gitHubUser.name }}</h3>
+    			<p>{{ gitHubUser.bio }}</p>
+    			<p><span class="fa fa-map-marker"></span> {{ gitHubUser.location }}</p>
+    			<h4>Mes repositories ({{ gitHubUser.public_repos }})</h4>
+			{% endif %}
+			
+			{% if gitHubRepositories is defined %}
+    		    {% for repo in gitHubRepositories %}
+        		    <hr/>
+        		    <div class="row">
+        				<p class="col-2"> {{ repo.name }}</p>
+        				<p class="col-6"> {{ repo.description }}</p>
+        				<p class="col-2"> {{ repo.language }}</p>
+        			</div>
+    			{% endfor %}
+			{% endif %}
+		</div>
+		
+		<div id="blocRegions" class="hiddenContent row">
+		    {% if regions is defined %}
+    		    {% for region in regions %}
+    				<p class="col-1"> {{ region.code }}</p>
+    				<p class="col-11"> {{ region.nom }}</p>
+    			{% endfor %}
+			{% endif %}
+		</div>
+		
+		<div id="blocReddit" class="hiddenContent row">
+		    {% if redditTop is not null %}
+    		    {% for post in redditTop.data.children %}
+        				<p class="col-12"> {{ post.data.title }}</p>
+        				<p class="col-12">
+        					<a class="nav-link" href="{{ post.data.url }}">
+            					<i class="fa fa-external-link" aria-hidden="true"></i>
+            					Source ({{ post.data.url }})
+        					</a>
+        				</p>
+    			{% endfor %}
+			{% endif %}
+		</div>
+{% endblock %}

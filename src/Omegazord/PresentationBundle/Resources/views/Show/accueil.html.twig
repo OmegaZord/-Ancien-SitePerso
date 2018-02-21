@@ -1,0 +1,38 @@
+{% extends 'OmegazordPresentationBundle:Show:base.html.twig' %}
+
+{% block title %}Alexis CHARLES{% endblock %}
+
+{% block menuDesktop %}
+	<a class="col-12 newBtnMenu newBtnMenuTop" href="{{ path('cv') }}">Mon CV<span class="fa fa-arrow-right menuArrow"></span></a>
+	<a class="col-12 newBtnMenu newBtnMenuMiddle" href="{{ path('creations') }}">Mes créations<span class="fa fa-arrow-right menuArrow"></span></a>
+	<a class="col-12 newBtnMenu newBtnMenuBottom wordwrapbreakword" href="/downloads/CVAlexisCHARLES.pdf">Télécharger mon CV<img class="menuArrow" src="{{ asset('images/pdf-icon.png') }}"/></a>
+{% endblock %}
+
+{% block menuMobile %}
+	<li class="nav-item"><a class="nav-link txtWhite" href="{{ path('cv') }}">Mon CV</a></li>
+    <li class="nav-item"><a class="nav-link txtWhite" href="{{ path('creations') }}">Mes créations</a></li>
+{% endblock %}
+
+{% block body %}
+    <!-- <p class="animated infinite flipInX">Développeur informatique</p>
+    <p id ="testjs" onclick="testjs()">Cliquez-moi!</p> -->
+	<div id="reseauxSociaux">
+		<a href="https://www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</a>
+		<a href="https://www.github.com"><i class="fa fa-github" aria-hidden="true"></i>Github</a>
+		<a href="https://www.linkedin.com"><i class="fa fa-linkedin-square" aria-hidden="true"></i>LinkedIn</a>
+	</div>
+	<div>
+		<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+		<span class="souligne">Disponibilité:</span>
+		Actuellement en formation au titre professionnel de Développeur Web 
+		(Titre niveau III)<br/>
+		<span class="souligne">Fin de formation:</span> Février 2018
+		</p>
+		<!-- <p>Les articles récents qui m'intéressent: </p> Trouver comment intégrer des articles -->
+		
+		
+	</div>
+	<!-- <div>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45024.8365579046!2d1.4793082014273484!3d45.145537236931354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f8bd494a823efb%3A0x405d39260ee76f0!2s19100+Brive-la-Gaillarde!5e0!3m2!1sfr!2sfr!4v1509089077251" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</div> -->
+{% endblock %}
