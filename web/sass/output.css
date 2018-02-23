@@ -339,7 +339,17 @@ body {
 @media screen and (min-width: 576px) {
   body h1 {
     padding-left: 5%;
-    text-align: left; } }
+    text-align: left; }
+  body #comp1 {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 0px !important; }
+  body #comp3 {
+    border-top-right-radius: 10px; }
+  body #comp4 {
+    border-bottom-left-radius: 10px; }
+  body #comp5 {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 10px; } }
 @media screen and (min-width: 768px) {
   body .facebook {
     color: #718693; }
@@ -418,7 +428,7 @@ body {
         background-color: #bfd5df; }
       body #content #competences #comp1 {
         border-top-left-radius: 10px;
-        border-top-right-radius: 0px; }
+        border-top-right-radius: 0px !important; }
       body #content #competences #comp3 {
         border-top-right-radius: 10px; }
       body #content #competences #comp4 {

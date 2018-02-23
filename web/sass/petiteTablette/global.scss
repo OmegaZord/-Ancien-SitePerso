@@ -5,4 +5,26 @@ body
 		padding-left:5%;
 		text-align: left;
 	}
+
+	#comp1
+	{
+		border-top-left-radius: 10px;
+		border-top-right-radius: 0px !important;
+	}
+		
+	#comp3
+	{
+		border-top-right-radius: 10px;
+	}
+		
+	#comp4
+	{
+		border-bottom-left-radius: 10px;
+	}
+	
+	#comp5
+	{
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 10px;
+	}
 }
